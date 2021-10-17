@@ -13,6 +13,7 @@
 </head>
 <body>
 <form id="frm">
+	<input type="hidden" value="" name="seq" id="seq">
 	<table>
 		<thead>
 			<tr>
@@ -27,8 +28,8 @@
 		<tbody>
 			<c:forEach items="${list}" var="list">
 	 			<tr>
-	 				<td>${list.seq}</td>
-	  				<td>${list.subject}</td>
+	 			 	 <td>${list.seq}</td>
+	  				 <td><a href="#" onclick="fn_goView(${list.seq})">${list.subject}</a></td>
 					 <td>${list.content}</td>
 	 				 <td>${list.name}</td>
 	 				 <fmt:parseDate value="${list.reg_date}" var="dateValue" pattern="yyyyMMddHHmmss"/> 
@@ -39,12 +40,6 @@
 		</tbody>
 	</table>
 	<button type="button" onclick="location.href='/board/regiView'">글쓰기</button>
-	
-	<ul class="progress_bar_wrap">
-		<c:set var="percent" value="40" />
-		<li style="width : ${percent}"></li>
-		<li <c:if test="${percent eq 100}">style="border: 0"</c:if>></li>
-	</ul>
 </form>
 </body>
 </html>

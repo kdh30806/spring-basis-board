@@ -29,4 +29,9 @@ public class BoardServiceImpl implements BoardService {
 		return dao.regi(dto);
 	}
 
+	@Override
+	public BoardDTO view(int seq) {
+		return dao.view(seq);
+	}
+
 }

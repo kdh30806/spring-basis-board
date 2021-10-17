@@ -30,4 +30,9 @@ public class BoardDAOImpl implements BoardDAO {
 		return sqlSession.insert(namespace+".regi", dto);
 	}
 
+	@Override
+	public BoardDTO view(int seq) {
+		return sqlSession.selectOne(namespace+".view", seq);
+	}
+
 }

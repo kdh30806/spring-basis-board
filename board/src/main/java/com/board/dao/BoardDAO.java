@@ -10,6 +10,8 @@ public interface BoardDAO {
 
 Integer getMaxSeq();
 
-int regi(BoardDTO dto); 
+int regi(BoardDTO dto);
+
+public BoardDTO view(int seq); 
 
 }

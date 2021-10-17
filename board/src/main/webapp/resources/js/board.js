@@ -19,3 +19,12 @@ function fn_boardRegi(){
 		}
 	});
 };
+
+function fn_goView(seq){
+	$("#seq").val(seq);
+
+	var f = $("#frm");
+	f.attr("action", "/board/view");
+	f.attr("method", "POST");
+	f.submit();
+};

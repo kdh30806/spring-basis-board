@@ -57,4 +57,11 @@ public class BoardController {
 		}
 	}
 	
+	@RequestMapping(value = "/view", method = RequestMethod.POST)
+	public String view(Locale locale, Model model, HttpServletRequest request) throws Exception {
+		System.out.println("@@@@@@@@@@@@@@@@@@"+(String)request.getParameter("seq"));
+		BoardDTO dto = service.view(Integer.parseInt((String)request.getParameter("seq")));
+		model.addAttribute("view", dto);
+		return "/board/view";
+	}
 }
