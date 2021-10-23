@@ -11,10 +11,13 @@
 </head>
 <body>
 <form id="frm">
-제목 : <input type="text" placeholder="제목" id="subject" name="subject" value="${view.subject}">
-작성자 : <input type="text" placeholder="작성자" id="name" name="name" value="${view.name}">
-내용 : <input type="text" placeholder="내용" id="content" name="content" value="${view.content}"> 
-<button type="button" onclick="fn_boardRegi();">등록</button>
+<input type="hidden" value="" name="seq" id="seq">
+<div>제목 : ${view.subject} 조회수 : ${view.readCount}</div>
+<div>작성자 : ${view.name}</div>
+<div>내용 : ${view.content} </div>
+<button type="button" onclick='location.href="/board/list"'>목록</button>
+<button type="button" onclick='fn_goUpdateView(${view.seq})'>수정</button>
+<button type="button" onclick='fn_boardDelete(${view.seq})'>삭제</button>
 </form>
 </body>
 </html>
